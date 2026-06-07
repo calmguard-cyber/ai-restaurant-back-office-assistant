@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Restaurant Back Office Assistant | Owner Sales Page</title>
+  <style>
+    :root{--ink:#101820;--muted:#5d6a76;--line:#d9e1e8;--brand:#f97316;--green:#15803d;--paper:#f8fafc;--panel:#ffffff}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}.nav{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav a{color:var(--ink);text-decoration:none;font-weight:800}.links{display:flex;gap:12px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:11px 14px;font-size:15px;font-weight:900;cursor:pointer;text-decoration:none}.primary{background:var(--brand);color:#1b1008}.ghost{border:1px solid var(--line);background:#fff;color:var(--ink)}.hero{min-height:calc(100vh - 58px);display:grid;align-items:end;background:linear-gradient(90deg,rgba(10,15,20,.78),rgba(10,15,20,.36),rgba(10,15,20,.08)),url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=80") center/cover}.heroInner{width:min(1120px,100%);padding:70px 24px 54px;margin:0 auto;color:#fff}.kicker{display:inline-block;border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.28);border-radius:999px;padding:8px 12px;font-weight:800}.hero h1{font-size:clamp(42px,6vw,74px);line-height:1.02;margin:18px 0 14px;max-width:820px;letter-spacing:0}.hero p{font-size:20px;line-height:1.55;max-width:720px;color:#eef4f8}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.band{padding:46px 24px}.inner{max-width:1120px;margin:auto}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px}.card h2,.card h3{margin:0 0 10px}.card p,.card li{color:var(--muted);line-height:1.55}.split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.price{font-size:34px;font-weight:950;color:var(--green)}.steps{counter-reset:step}.steps div{display:grid;grid-template-columns:42px 1fr;gap:12px;margin:14px 0}.steps div:before{counter-increment:step;content:counter(step);width:34px;height:34px;border-radius:999px;background:#111827;color:#fff;display:grid;place-items:center;font-weight:900}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form label{display:block;font-weight:800;font-size:14px}.form input,.form select,.form textarea{width:100%;margin-top:6px;border:1px solid var(--line);border-radius:8px;padding:11px;font:inherit;background:#fff}.form textarea{grid-column:1/-1;min-height:100px;resize:vertical}.form .full{grid-column:1/-1}.status{color:var(--green);font-weight:800;margin-top:12px}.footer{padding:28px 24px;border-top:1px solid var(--line);color:var(--muted);background:#fff}@media(max-width:820px){.grid,.split,.form{grid-template-columns:1fr}.nav{padding:0 14px}.links{gap:8px}.heroInner{padding:54px 18px 40px}.hero p{font-size:18px}.form textarea,.form .full{grid-column:auto}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="sales.html">AI Restaurant Back Office Assistant</a>
+    <div class="links"><a class="btn ghost" href="en.html">Try demo</a><a class="btn primary" href="#pilot">Book pilot</a></div>
+  </nav>
+
+  <section class="hero">
+    <div class="heroInner">
+      <span class="kicker">For independent restaurants with an existing POS</span>
+      <h1>Know what sold today and what to push tomorrow.</h1>
+      <p>Upload yesterday's POS CSV and get a plain-English owner summary, top sellers, weak items, review replies, menu translations, and simple promo ideas. No POS replacement. No EFTPOS integration.</p>
+      <div class="cta"><a class="btn primary" href="en.html#csvInput">Try CSV report</a><a class="btn ghost" href="#pilot">Start a 7-day pilot</a></div>
+    </div>
+  </section>
+
+  <section class="band" id="pilot">
+    <div class="inner split">
+      <div>
+        <h2>Start with one real CSV</h2>
+        <p>Use this for a 7-day pilot with a single restaurant. The first useful outcome is a report the owner would actually read after service.</p>
+        <p>Bring: restaurant type, POS name, one exported item-sales CSV, preferred owner language, and the owner's biggest daily admin pain.</p>
+      </div>
+      <div class="card">
+        <h3>Pilot request</h3>
+        <form class="form" onsubmit="sendPilotEmail(event)">
+          <label>Your name<input id="leadName" required placeholder="Jane" /></label>
+          <label>Email<input id="leadEmail" type="email" required placeholder="owner@example.com" /></label>
+          <label>Restaurant<input id="leadRestaurant" required placeholder="Harbour Lane Cafe" /></label>
+          <label>POS<select id="leadPos"><option>Square</option><option>Lightspeed</option><option>Kounta</option><option>Abacus</option><option>Other / not sure</option></select></label>
+          <label class="full">What should the assistant help with first?<textarea id="leadNotes" placeholder="Daily sales summary, weak menu items, review replies, menu translations..."></textarea></label>
+          <button class="btn primary full" type="submit">Prepare email</button>
+        </form>
+        <div class="status" id="formStatus"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="inner grid">
+      <div class="card"><h3>Daily owner summary</h3><p>Sales, item count, top item, weak seller, and tomorrow's best promotion in a message you can send to Telegram or WhatsApp.</p></div>
+      <div class="card"><h3>CSV first</h3><p>Works with exported POS sales files and flexible column names. Early pilots can run without changing systems or sharing login credentials.</p></div>
+      <div class="card"><h3>Local validation</h3><p>Use it for one shop, one day at a time. Keep only what saves the owner time or helps sell more dishes.</p></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="inner split">
+      <div>
+        <h2>Built for the boring work after service</h2>
+        <p>Small restaurant owners already have enough tools. This assistant sits beside the POS and turns exported sales into decisions: what to restock, what to promote, and what to rewrite on the menu.</p>
+        <div class="steps">
+          <div><p>Export yesterday's item sales CSV from Square, Lightspeed, Kounta, or another POS.</p></div>
+          <div><p>Map columns once, then generate the daily business report.</p></div>
+          <div><p>Copy the owner summary, reply to reviews, and create menu or social content.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Pilot pricing hypothesis</h3>
+        <p class="price">AUD 49-199/month</p>
+        <p>Setup is expected to be AUD 300-800 for CSV templates, owner report format, and message delivery configuration.</p>
+        <p>Best first customers: Thai, Vietnamese, Japanese, Chinese, cafe, and small food retail shops in Sydney.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="inner">V1 scope: POS-adjacent reporting, not a POS replacement. No EFTPOS credentials, no payment data, no real-time sync promise.</div>
+  </footer>
+  <script>
+    function sendPilotEmail(event){
+      event.preventDefault();
+      const fields={name:leadName.value,email:leadEmail.value,restaurant:leadRestaurant.value,pos:leadPos.value,notes:leadNotes.value};
+      const body=`Name: ${fields.name}\nEmail: ${fields.email}\nRestaurant: ${fields.restaurant}\nPOS: ${fields.pos}\n\nPilot goal:\n${fields.notes||'Daily sales report pilot'}`;
+      location.href=`mailto:hello@example.com?subject=${encodeURIComponent('Restaurant AI assistant pilot - '+fields.restaurant)}&body=${encodeURIComponent(body)}`;
+      formStatus.textContent='Email draft prepared in your mail app.';
+    }
+  </script>
+</body>
+</html>
