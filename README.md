@@ -2,6 +2,18 @@
 
 一个 POS 外围 AI 助手：不替换 POS，不碰 EFTPOS/PCEFTPOS 集成，先帮餐馆老板把销售、菜单、库存、review、社媒和每日经营总结自动化。
 
+## Live demo
+
+https://calmguard-cyber.github.io/ai-restaurant-back-office-assistant/
+
+## Working MVP features
+
+- Paste/load POS CSV and generate a daily business report
+- Generate a short Telegram / WhatsApp owner summary
+- Generate Google review replies in English / Chinese / Thai / Japanese
+- Translate menu items and create Instagram/TikTok captions
+- Static GitHub Pages demo; no backend required for first validation
+
 ## Positioning
 
 **一句话：** 不用换 POS，我帮你每天看懂生意、少浪费时间、多卖菜。
@@ -38,7 +50,3 @@
 ## Fastest validation
 
 找 3 家熟悉的亚洲餐馆免费试用 7 天，换 testimonial 和真实 CSV 样本。
-
-## Demo
-
-Static demo is in `demo/index.html`.
