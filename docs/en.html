@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Restaurant Back Office Assistant</title>
+  <style>
+    :root{--bg:#07111f;--card:#0f1b2d;--muted:#9fb0c5;--text:#f7fbff;--brand:#fb923c;--brand2:#22c55e;--danger:#fb7185;--line:#223148}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,#1f3b57,#07111f 48%,#111827);color:var(--text)}.wrap{max-width:1180px;margin:auto;padding:34px 20px 60px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}.badge{display:inline-block;border:1px solid #7c2d12;background:#2b160c;color:#fed7aa;border-radius:999px;padding:8px 13px;font-size:14px}.h1{font-size:46px;line-height:1.05;margin:18px 0 14px;letter-spacing:-.045em}.sub{font-size:19px;line-height:1.6;color:#d4e0ee}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{display:inline-block;text-decoration:none;border:0;border-radius:14px;padding:12px 16px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:#1b1008}.ghost{background:#122033;border:1px solid #334155;color:#e5edf7}.panel,.card{background:rgba(15,27,45,.84);border:1px solid #2b3a52;border-radius:22px;box-shadow:0 24px 80px rgba(0,0,0,.22)}.panel{padding:20px}.small{font-size:14px;color:var(--muted)}.metric{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}.metric:last-child{border:0}.good{color:var(--brand2);font-weight:900}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.card{padding:18px}.card h3{margin:0 0 10px}.card p,.card li{color:#c9d6e5;line-height:1.55}.section{margin-top:34px}.tools{display:grid;grid-template-columns:1fr 1fr;gap:18px}.tool{background:rgba(7,17,31,.72);border:1px solid #29384f;border-radius:18px;padding:16px}.tool h3{margin-top:0}.report,textarea,input,select{width:100%;border-radius:14px;border:1px solid #29384f;background:#07111f;color:#dbeafe;padding:13px;font:inherit}.report{min-height:180px;white-space:pre-line;line-height:1.5}textarea{min-height:105px;resize:vertical}input,select{margin:6px 0 10px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.price{font-size:30px;font-weight:900}.footer{margin-top:38px;padding-top:18px;border-top:1px solid #2b3a52;color:#9fb0c5}@media(max-width:900px){.hero,.grid,.tools,.row{grid-template-columns:1fr}.h1{font-size:35px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="cta" style="justify-content:flex-end;margin-top:0"><a class="btn primary" href="en.html">English</a><a class="btn ghost" href="index.html">中文</a></div>
+    <section class="hero">
+      <div>
+        <div class="badge">🍜 POS-adjacent AI Assistant · Working MVP</div>
+        <h1 class="h1">A daily AI back-office assistant for restaurant owners</h1>
+        <p class="sub">No POS replacement. No EFTPOS/PCEFTPOS integration. Upload a sales CSV and get a daily business report, review replies, menu translations, and social captions.</p>
+        <div class="cta">
+          <button class="btn primary" onclick="document.querySelector('#csvInput').scrollIntoView({behavior:'smooth'})">Try CSV report</button>
+          <button class="btn ghost" onclick="loadSampleCsv()">Load sample data</button>
+        </div>
+        <p class="small">Built for Sydney Asian restaurants, cafes, Thai/Viet/Japanese shops, and small food businesses.</p>
+      </div>
+      <div class="panel" id="summaryCard">
+        <div class="small">Owner daily summary</div>
+        <div class="metric"><span>Sales</span><b id="salesMetric">$2,430 <span class="good">demo</span></b></div>
+        <div class="metric"><span>Top dish</span><b id="topMetric">Chicken Pad Thai</b></div>
+        <div class="metric"><span>Watch item</span><b id="watchMetric">Mango Sticky Rice</b></div>
+        <div class="metric"><span>Tomorrow idea</span><b id="ideaMetric">Lunch combo</b></div>
+        <p class="small">Designed for a daily Telegram / WhatsApp push.</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card"><h3>1. Sales CSV Summary</h3><p>Summarise revenue, top items, weak sellers, discounts, and anomalies.</p></div>
+      <div class="card"><h3>2. Review Reply</h3><p>Generate Google review replies in English, Chinese, Thai, and Japanese.</p></div>
+      <div class="card"><h3>3. Menu + Social</h3><p>Translate menu items and generate Instagram/TikTok caption ideas.</p></div>
+    </section>
+
+    <section class="section panel" id="csvInput">
+      <h2>Feature 1: POS CSV Daily Report</h2>
+      <p class="small">Expected columns: date, item_name, category, quantity, gross_sales, discount, net_sales. Paste CSV or load sample.</p>
+      <textarea id="csvText" placeholder="Paste POS CSV here..."></textarea>
+      <div class="cta"><button class="btn primary" onclick="generateReport()">Generate daily report</button><button class="btn ghost" onclick="loadSampleCsv()">Use sample CSV</button></div>
+      <div class="tools" style="margin-top:16px">
+        <div class="tool"><h3>AI Daily Business Report</h3><div class="report" id="reportOut">Load sample data, then generate a report.</div></div>
+        <div class="tool"><h3>Owner Telegram / WhatsApp Summary</h3><div class="report" id="messageOut">Short owner message will appear here.</div></div>
+      </div>
+    </section>
+
+    <section class="section tools">
+      <div class="tool">
+        <h3>Feature 2: Google Review Reply Generator</h3>
+        <div class="row"><select id="rating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select><select id="replyLang"><option>English</option><option>中文</option><option>ไทย</option><option>日本語</option></select></div>
+        <textarea id="reviewText" placeholder="Paste Google review...">Loved the pad thai and friendly staff. The restaurant was busy but food came fast.</textarea>
+        <button class="btn primary" onclick="generateReviewReply()">Generate reply</button>
+        <div class="report" id="replyOut" style="margin-top:12px"></div>
+      </div>
+      <div class="tool">
+        <h3>Feature 3: Menu Translator + Social Caption</h3>
+        <input id="menuName" value="Chicken Pad Thai" placeholder="Menu item name" />
+        <textarea id="menuDesc" placeholder="Description">Stir-fried rice noodles with chicken, egg, tofu, bean sprouts, peanuts and tamarind sauce.</textarea>
+        <button class="btn primary" onclick="translateMenu()">Translate + caption</button>
+        <div class="report" id="menuOut" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+    <section class="section grid">
+      <div class="card"><h3>Setup</h3><p class="price">AUD 300–800</p><p>CSV template, report setup, message delivery configuration.</p></div>
+      <div class="card"><h3>Monthly</h3><p class="price">AUD 49–199</p><p>Daily summaries plus review, menu, and social tools.</p></div>
+      <div class="card"><h3>SEA pricing</h3><p class="price">USD 19–99</p><p>For small restaurants in Southeast Asian tourism areas.</p></div>
+    </section>
+
+    <footer class="footer">V1 principle: POS adjacent, not POS replacement. This static MVP uses local browser logic only; no customer data leaves the page.</footer>
+  </main>
+
+  <script>
+    const sampleCsv = `date,item_name,category,quantity,gross_sales,discount,net_sales
+2026-06-06,Chicken Pad Thai,Noodles,34,612,20,592
+2026-06-06,Beef Pho,Noodles,28,504,0,504
+2026-06-06,Mango Sticky Rice,Dessert,18,216,0,216
+2026-06-06,Iced Thai Milk Tea,Drink,42,252,10,242
+2026-06-06,Green Curry,Rice,16,304,0,304
+2026-06-06,Chicken Satay,Starter,9,126,0,126
+2026-06-06,Coconut Water,Drink,7,56,0,56`;
+    function loadSampleCsv(){document.getElementById('csvText').value=sampleCsv;generateReport();}
+    function money(n){return '$'+Number(n||0).toLocaleString(undefined,{maximumFractionDigits:0});}
+    function parseCsv(text){const lines=text.trim().split(/\r?\n/).filter(Boolean); if(lines.length<2) return []; const headers=lines[0].split(',').map(h=>h.trim()); return lines.slice(1).map(line=>{const cells=line.split(','); const row={}; headers.forEach((h,i)=>row[h]=cells[i]?.trim()||''); return row;});}
+    function generateReport(){
+      const rows=parseCsv(document.getElementById('csvText').value); if(!rows.length){alert('Paste CSV first.');return;}
+      const items={}; let total=0, qty=0, discount=0;
+      rows.forEach(r=>{const name=r.item_name||r.item||'Unknown'; const q=Number(r.quantity||0); const net=Number(r.net_sales||r.sales||0); const disc=Number(r.discount||0); qty+=q; total+=net; discount+=disc; items[name]=items[name]||{name,qty:0,sales:0,category:r.category||''}; items[name].qty+=q; items[name].sales+=net;});
+      const sorted=Object.values(items).sort((a,b)=>b.qty-a.qty); const top=sorted[0]; const low=sorted[sorted.length-1]; const drink=sorted.find(i=>/drink|tea|coffee|water/i.test(i.category+i.name)); const idea = drink ? `${top.name} + ${drink.name} combo` : `${top.name} lunch combo`;
+      const report=`Daily business report\n\nTotal sales: ${money(total)}\nTotal items sold: ${qty}\nDiscounts: ${money(discount)}${discount/Math.max(total,1)>.08?' ⚠️ High discount level':''}\n\nTop sellers:\n${sorted.slice(0,5).map((i,idx)=>`${idx+1}. ${i.name} — ${i.qty} orders / ${money(i.sales)}`).join('\n')}\n\nWeak seller: ${low.name} — ${low.qty} orders\n\nTomorrow recommendations:\n• Promote ${idea}\n• Feature ${top.name} on signage / Instagram story\n• Check ingredients for ${top.name} to avoid stockout\n• If ${low.name} keeps underperforming, test a new description or bundle`;
+      const msg=`Owner summary: sales ${money(total)}, ${qty} items sold. Top item: ${top.name} (${top.qty} orders). Tomorrow: promote ${idea}. Watch stock for ${top.name}. Weak seller: ${low.name}.`;
+      document.getElementById('reportOut').textContent=report; document.getElementById('messageOut').textContent=msg; document.getElementById('salesMetric').innerHTML=`${money(total)} <span class="good">live</span>`; document.getElementById('topMetric').textContent=top.name; document.getElementById('watchMetric').textContent=low.name; document.getElementById('ideaMetric').textContent=idea;
+    }
+    function generateReviewReply(){
+      const rating=Number(document.getElementById('rating').value); const lang=document.getElementById('replyLang').value; const text=document.getElementById('reviewText').value; const positive=rating>=4; const hasWait=/wait|slow|late|busy/i.test(text); const dish=(text.match(/pad thai|pho|ramen|sushi|coffee|tea|curry/i)||['meal'])[0];
+      const replies={English: positive?`Thank you so much for visiting us! We’re glad you enjoyed the ${dish} and our service. Hope to see you again soon 😊`:`Thank you for your feedback, and we’re sorry your experience wasn’t perfect. We’ll review this with the team${hasWait?' and work on wait times':''}. Please contact us directly so we can make it right.`,'中文': positive?`谢谢你的支持！很高兴你喜欢我们的 ${dish} 和服务，期待下次再见 😊`:`谢谢你的反馈，也很抱歉这次体验没有达到预期。我们会和团队复盘${hasWait?'，尤其改进出餐/等待时间':''}，也欢迎你私信我们，我们希望补救这次体验。`,'ไทย': positive?`ขอบคุณมากครับ/ค่ะ ดีใจที่คุณชอบ ${dish} และบริการของเรา หวังว่าจะได้ต้อนรับอีกเร็ว ๆ นี้ 😊`:`ขอบคุณสำหรับความคิดเห็น และขออภัยที่ประสบการณ์ครั้งนี้ยังไม่ดีพอ เราจะนำไปปรับปรุงกับทีม${hasWait?' โดยเฉพาะเรื่องเวลารออาหาร':''} ครับ/ค่ะ`,'日本語': positive?`ご来店ありがとうございます！${dish} とサービスを気に入っていただけて嬉しいです。またのお越しをお待ちしています 😊`:`貴重なご意見ありがとうございます。今回ご期待に沿えず申し訳ありません。スタッフと共有し${hasWait?'、待ち時間の改善も含めて':''}改善いたします。`};
+      document.getElementById('replyOut').textContent=replies[lang];
+    }
+    function translateMenu(){
+      const name=document.getElementById('menuName').value||'Menu item'; const desc=document.getElementById('menuDesc').value||''; const dict={'Chicken Pad Thai':['泰式鸡肉炒河粉','ผัดไทยไก่','チキン・パッタイ'],'Mango Sticky Rice':['芒果糯米饭','ข้าวเหนียวมะม่วง','マンゴーもち米'],'Beef Pho':['牛肉河粉','เฝอเนื้อ','牛肉フォー'],'Green Curry':['绿咖喱','แกงเขียวหวาน','グリーンカレー']}; const t=dict[name]||[`中文：${name}`,`ไทย: ${name}`,`日本語: ${name}`]; const caption=`Fresh ${name} today 🍜 Perfect for lunch or dinner. Drop by or order takeaway! #sydneyfood #asianrestaurant #foodie`;
+      document.getElementById('menuOut').textContent=`English: ${name}\nChinese: ${t[0]}\nThai: ${t[1]}\nJapanese: ${t[2]}\n\nShort description:\n${desc}\n\nInstagram/TikTok caption:\n${caption}`;
+    }
+    generateReviewReply(); translateMenu();
+  </script>
+</body>
+</html>
