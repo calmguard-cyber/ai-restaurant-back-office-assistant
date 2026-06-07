@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Restaurant Back Office Assistant</title>
+  <style>
+    :root{--bg:#07111f;--card:#0f1b2d;--muted:#9fb0c5;--text:#f7fbff;--brand:#fb923c;--brand2:#22c55e;--line:#223148}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:radial-gradient(circle at top left,#1f3b57,#07111f 48%,#111827);color:var(--text)}.wrap{max-width:1120px;margin:auto;padding:42px 20px 60px}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center}.badge{display:inline-block;border:1px solid #7c2d12;background:#2b160c;color:#fed7aa;border-radius:999px;padding:8px 13px;font-size:14px}.h1{font-size:50px;line-height:1.05;margin:18px 0 14px;letter-spacing:-.045em}.sub{font-size:20px;line-height:1.6;color:#d4e0ee}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{border:0;border-radius:14px;padding:14px 18px;font-size:16px;font-weight:800}.primary{background:var(--brand);color:#1b1008}.ghost{background:#122033;border:1px solid #334155;color:#e5edf7}.panel,.card{background:rgba(15,27,45,.82);border:1px solid #2b3a52;border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.25)}.panel{padding:22px}.small{font-size:14px;color:var(--muted)}.metric{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}.metric:last-child{border:0}.good{color:var(--brand2);font-weight:900}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}.card{padding:20px}.card h3{margin:0 0 10px}.card p,.card li{color:#c9d6e5;line-height:1.55}.section{margin-top:42px}.demo{display:grid;grid-template-columns:1fr 1fr;gap:16px}.report{background:#07111f;border:1px solid #29384f;border-radius:16px;padding:16px;white-space:pre-line;color:#dbeafe}.price{font-size:32px;font-weight:900}.footer{margin-top:40px;padding-top:18px;border-top:1px solid #2b3a52;color:#9fb0c5}@media(max-width:880px){.hero,.grid,.demo{grid-template-columns:1fr}.h1{font-size:36px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="badge">🍜 POS 外围 AI 助手 · MVP Demo</div>
+        <h1 class="h1">每天自动告诉餐馆老板：今天卖得怎样，明天该推什么</h1>
+        <p class="sub">不用换 POS，不碰 EFTPOS。上传销售 CSV，就生成 daily business report、review 回复、菜单翻译和社媒 caption。</p>
+        <div class="cta">
+          <button class="btn primary">Book 7-day free trial</button>
+          <button class="btn ghost">Upload sample CSV</button>
+        </div>
+        <p class="small">For Sydney Asian restaurants, cafes, Thai/Viet/Japanese shops, and small food businesses.</p>
+      </div>
+      <div class="panel">
+        <div class="small">今日老板摘要</div>
+        <div class="metric"><span>Sales</span><b>$2,430 <span class="good">+12%</span></b></div>
+        <div class="metric"><span>Top dish</span><b>Chicken Pad Thai</b></div>
+        <div class="metric"><span>Watch item</span><b>Mango Sticky Rice</b></div>
+        <div class="metric"><span>Tomorrow idea</span><b>Lunch combo</b></div>
+        <p class="small">每天 Telegram / WhatsApp 自动推送一条。</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card"><h3>1. Sales CSV Summary</h3><p>自动总结销售额、top items、低表现菜品、折扣异常。</p></div>
+      <div class="card"><h3>2. Review Reply</h3><p>Google review 自动生成英文/中文/泰文/日文回复。</p></div>
+      <div class="card"><h3>3. Menu + Social</h3><p>菜单翻译、Instagram/TikTok caption、明日促销建议。</p></div>
+    </section>
+
+    <section class="section panel">
+      <h2>Sample AI Daily Report</h2>
+      <div class="demo">
+        <div class="report">今天销售 $2,430，比昨天 +12%。
+
+Top 3:
+1. Chicken Pad Thai — 34 orders
+2. Beef Pho — 28 orders
+3. Iced Thai Milk Tea — 42 orders
+
+建议：明天午餐推 Chicken Pad Thai + Thai Milk Tea combo。甜品 Mango Sticky Rice 转化不错，可以放到 counter signage。</div>
+        <div class="report">Google Review Reply:
+
+Thank you so much for visiting us! We’re glad you enjoyed the Pad Thai and Thai milk tea. Hope to see you again soon 😊
+
+中文菜单：
+Chicken Pad Thai → 泰式鸡肉炒河粉
+Mango Sticky Rice → 芒果糯米饭</div>
+      </div>
+    </section>
+
+    <section class="section grid">
+      <div class="card"><h3>Setup</h3><p class="price">AUD 300–800</p><p>CSV 模板、报告格式、推送设置。</p></div>
+      <div class="card"><h3>Monthly</h3><p class="price">AUD 49–199</p><p>每日摘要 + review/menu/social 工具。</p></div>
+      <div class="card"><h3>SEA pricing</h3><p class="price">USD 19–99</p><p>适合东南亚旅游区小餐馆。</p></div>
+    </section>
+
+    <footer class="footer">V1 principle: POS adjacent, not POS replacement.</footer>
+  </main>
+</body>
+</html>

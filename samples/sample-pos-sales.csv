@@ -1,0 +1,6 @@
+date,item_name,category,quantity,gross_sales,discount,net_sales
+2026-06-06,Chicken Pad Thai,Noodles,34,612,20,592
+2026-06-06,Beef Pho,Noodles,28,504,0,504
+2026-06-06,Mango Sticky Rice,Dessert,18,216,0,216
+2026-06-06,Iced Thai Milk Tea,Drink,42,252,10,242
+2026-06-06,Green Curry,Rice,16,304,0,304
