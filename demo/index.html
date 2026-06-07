@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Restaurant Back Office Assistant</title>
   <style>
-    :root{--bg:#07111f;--card:#0f1b2d;--muted:#9fb0c5;--text:#f7fbff;--brand:#fb923c;--brand2:#22c55e;--danger:#fb7185;--line:#223148}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:radial-gradient(circle at top left,#1f3b57,#07111f 48%,#111827);color:var(--text)}.wrap{max-width:1180px;margin:auto;padding:34px 20px 60px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}.badge{display:inline-block;border:1px solid #7c2d12;background:#2b160c;color:#fed7aa;border-radius:999px;padding:8px 13px;font-size:14px}.h1{font-size:46px;line-height:1.05;margin:18px 0 14px;letter-spacing:-.045em}.sub{font-size:19px;line-height:1.6;color:#d4e0ee}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:14px;padding:12px 16px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:#1b1008}.ghost{background:#122033;border:1px solid #334155;color:#e5edf7}.ok{background:var(--brand2);color:#052e16}.panel,.card{background:rgba(15,27,45,.84);border:1px solid #2b3a52;border-radius:22px;box-shadow:0 24px 80px rgba(0,0,0,.22)}.panel{padding:20px}.small{font-size:14px;color:var(--muted)}.metric{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}.metric:last-child{border:0}.good{color:var(--brand2);font-weight:900}.bad{color:var(--danger);font-weight:900}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.card{padding:18px}.card h3{margin:0 0 10px}.card p,.card li{color:#c9d6e5;line-height:1.55}.section{margin-top:34px}.tools{display:grid;grid-template-columns:1fr 1fr;gap:18px}.tool{background:rgba(7,17,31,.72);border:1px solid #29384f;border-radius:18px;padding:16px}.tool h3{margin-top:0}.report,textarea,input,select{width:100%;border-radius:14px;border:1px solid #29384f;background:#07111f;color:#dbeafe;padding:13px;font:inherit}.report{min-height:180px;white-space:pre-line;line-height:1.5}textarea{min-height:105px;resize:vertical}input,select{margin:6px 0 10px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.price{font-size:30px;font-weight:900}.pill{display:inline-flex;align-items:center;gap:6px;margin:4px 6px 4px 0;padding:7px 10px;border:1px solid #334155;border-radius:999px;background:#0b1525;color:#cfe3ff}.footer{margin-top:38px;padding-top:18px;border-top:1px solid #2b3a52;color:#9fb0c5}@media(max-width:900px){.hero,.grid,.tools,.row{grid-template-columns:1fr}.h1{font-size:35px}}
+    :root{--bg:#07111f;--card:#0f1b2d;--muted:#9fb0c5;--text:#f7fbff;--brand:#fb923c;--brand2:#22c55e;--danger:#fb7185;--line:#223148}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:radial-gradient(circle at top left,#1f3b57,#07111f 48%,#111827);color:var(--text)}.wrap{max-width:1180px;margin:auto;padding:34px 20px 60px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}.badge{display:inline-block;border:1px solid #7c2d12;background:#2b160c;color:#fed7aa;border-radius:999px;padding:8px 13px;font-size:14px}.h1{font-size:46px;line-height:1.05;margin:18px 0 14px;letter-spacing:-.045em}.sub{font-size:19px;line-height:1.6;color:#d4e0ee}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:14px;padding:12px 16px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:#1b1008}.ghost{background:#122033;border:1px solid #334155;color:#e5edf7}.ok{background:var(--brand2);color:#052e16}.panel,.card{background:rgba(15,27,45,.84);border:1px solid #2b3a52;border-radius:22px;box-shadow:0 24px 80px rgba(0,0,0,.22)}.panel{padding:20px}.small{font-size:14px;color:var(--muted)}.metric{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}.metric:last-child{border:0}.good{color:var(--brand2);font-weight:900}.bad{color:var(--danger);font-weight:900}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.card{padding:18px}.card h3{margin:0 0 10px}.card p,.card li{color:#c9d6e5;line-height:1.55}.section{margin-top:34px}.tools{display:grid;grid-template-columns:1fr 1fr;gap:18px}.tool{background:rgba(7,17,31,.72);border:1px solid #29384f;border-radius:18px;padding:16px}.tool h3{margin-top:0}.report,textarea,input,select{width:100%;border-radius:14px;border:1px solid #29384f;background:#07111f;color:#dbeafe;padding:13px;font:inherit}.report{min-height:180px;white-space:pre-line;line-height:1.5}textarea{min-height:105px;resize:vertical}input,select{margin:6px 0 10px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.profile{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.mapping{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}.mapping label{display:block;color:#9fb0c5;font-size:13px}.status,.help{margin-top:10px;color:#9fb0c5;font-size:14px;line-height:1.45}.checklist{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.checklist label{display:flex;gap:8px;align-items:flex-start;color:#c9d6e5;line-height:1.35}.checklist input{width:auto;margin:2px 0 0}.history{display:grid;gap:10px}.historyItem{border:1px solid #29384f;border-radius:12px;padding:12px;background:#07111f}.historyItem b{display:block;margin-bottom:6px}.historyItem p{margin:0;color:#c9d6e5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.price{font-size:30px;font-weight:900}.pill{display:inline-flex;align-items:center;gap:6px;margin:4px 6px 4px 0;padding:7px 10px;border:1px solid #334155;border-radius:999px;background:#0b1525;color:#cfe3ff}.footer{margin-top:38px;padding-top:18px;border-top:1px solid #2b3a52;color:#9fb0c5}@media(max-width:900px){.hero,.grid,.tools,.row,.mapping,.profile,.checklist{grid-template-columns:1fr}.h1{font-size:35px}}
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="cta" style="justify-content:flex-end;margin-top:0"><a class="btn ghost" href="en.html">English</a><a class="btn primary" href="index.html">中文</a></div>
+    <div class="cta" style="justify-content:flex-end;margin-top:0"><a class="btn ghost" href="sales.html">Sales page</a><a class="btn ghost" href="en.html">English</a><a class="btn primary" href="index.html">中文</a></div>
     <section class="hero">
       <div>
         <div class="badge">🍜 POS 外围 AI 助手 · Working MVP</div>
@@ -40,9 +40,23 @@
 
     <section class="section panel" id="csvInput">
       <h2>Feature 1: POS CSV Daily Report</h2>
-      <p class="small">Expected columns: date, item_name, category, quantity, gross_sales, discount, net_sales. Paste CSV or load sample.</p>
+      <p class="small">Expected columns: date, item_name, category, quantity, gross_sales, discount, net_sales. Paste CSV, upload a file, or load a sample.</p>
+      <div class="profile">
+        <input id="restaurantName" value="Demo Thai Kitchen" placeholder="Restaurant name" />
+        <input id="cuisineType" value="Thai" placeholder="Cuisine type" />
+        <select id="timezone"><option>Australia/Sydney</option><option>Asia/Bangkok</option><option>Asia/Ho_Chi_Minh</option><option>Asia/Tokyo</option></select>
+        <input id="posName" value="Square / Lightspeed / POS CSV" placeholder="POS name" />
+      </div>
+      <div class="row">
+        <select id="preferredLanguage"><option>English</option><option>中文</option><option>ไทย</option><option>日本語</option></select>
+        <select id="sampleSelect" onchange="loadSampleCsv(this.value)"><option value="thai">Thai sample</option><option value="viet">Vietnamese sample</option><option value="japanese">Japanese sample</option><option value="cafe">Cafe sample</option></select>
+      </div>
+      <div class="help">从 POS 导出 CSV，一行代表一个售出菜品。如果用 Excel 打开，请另存为 CSV UTF-8 再上传。</div>
+      <input id="csvFile" type="file" accept=".csv,text/csv" onchange="readCsvFile(event)" />
       <textarea id="csvText" placeholder="Paste POS CSV here..."></textarea>
-      <div class="cta"><button class="btn primary" onclick="generateReport()">Generate daily report</button><button class="btn ghost" onclick="loadSampleCsv()">Use sample CSV</button></div>
+      <div id="mappingPanel" class="mapping"></div>
+      <div id="csvStatus" class="status">Column mapping will appear after you paste, upload, or load CSV data.</div>
+      <div class="cta"><button class="btn primary" onclick="generateReport()">Generate daily report</button><button class="btn ghost" onclick="loadSampleCsv()">Use selected sample</button><button class="btn ghost" onclick="exportReport()">Export report .txt</button><button class="btn ghost" onclick="printPdfReport()">Save as PDF</button><button class="btn ghost" onclick="copyOwnerSummary()">Copy summary</button></div>
       <div class="tools" style="margin-top:16px">
         <div class="tool"><h3>AI Daily Business Report</h3><div class="report" id="reportOut">Load sample data, then generate a report.</div></div>
         <div class="tool"><h3>Owner Telegram / WhatsApp Summary</h3><div class="report" id="messageOut">Short owner message will appear here.</div></div>
@@ -66,10 +80,29 @@
       </div>
     </section>
 
+    <section class="section panel">
+      <h2>Pilot onboarding checklist</h2>
+      <div class="checklist" id="onboardingList">
+        <label><input type="checkbox" value="pos" /> 确认 POS 名称和 CSV 导出路径</label>
+        <label><input type="checkbox" value="csv" /> 拿到 3 天 item sales CSV</label>
+        <label><input type="checkbox" value="profile" /> 设置餐馆 profile 和老板语言</label>
+        <label><input type="checkbox" value="report" /> 生成第一份 daily report</label>
+        <label><input type="checkbox" value="feedback" /> 询问哪些内容有用/没用</label>
+        <label><input type="checkbox" value="pay" /> 询问付费意愿</label>
+      </div>
+      <div class="status" id="onboardingStatus">0 of 6 pilot steps complete.</div>
+    </section>
+
     <section class="section grid">
       <div class="card"><h3>Setup</h3><p class="price">AUD 300–800</p><p>CSV 模板、报告格式、推送设置。</p></div>
       <div class="card"><h3>Monthly</h3><p class="price">AUD 49–199</p><p>每日摘要 + review/menu/social 工具。</p></div>
       <div class="card"><h3>SEA pricing</h3><p class="price">USD 19–99</p><p>适合东南亚旅游区小餐馆。</p></div>
+    </section>
+
+    <section class="section panel">
+      <h2>Generated content history</h2>
+      <div class="cta"><button class="btn ghost" onclick="clearHistory()">Clear history</button></div>
+      <div class="history" id="historyList"></div>
     </section>
 
     <footer class="footer">V1 principle: POS adjacent, not POS replacement. This static MVP uses local browser logic only; no customer data leaves the page.</footer>
@@ -85,25 +118,69 @@
 2026-06-06,Chicken Satay,Starter,9,126,0,126
 2026-06-06,Coconut Water,Drink,7,56,0,56`;
 
-    function loadSampleCsv(){document.getElementById('csvText').value=sampleCsv;generateReport();}
+    const sampleLibrary={
+      thai:{profile:['Demo Thai Kitchen','Thai','Australia/Sydney','Square'],csv:sampleCsv},
+      viet:{profile:['Saigon Lunch Bar','Vietnamese','Australia/Sydney','Lightspeed'],csv:`sale date,product name,department,units sold,total,discounts
+2026-06-06,Beef Pho,Noodles,31,558,0
+2026-06-06,Pork Banh Mi,Rolls,46,552,18
+2026-06-06,Lemongrass Chicken Rice,Rice,22,374,0
+2026-06-06,Vietnamese Iced Coffee,Drink,39,234,0
+2026-06-06,Fresh Rice Paper Rolls,Starter,11,143,0`},
+      japanese:{profile:['Tokyo Bento House','Japanese','Australia/Sydney','Kounta'],csv:`business date,menu item,category,qty,gross,discount,net sales
+2026-06-06,Chicken Katsu Don,Rice Bowl,29,522,0,522
+2026-06-06,Salmon Sushi Set,Sushi,18,396,12,384
+2026-06-06,Pork Gyoza,Starter,24,288,0,288
+2026-06-06,Miso Soup,Sides,16,64,0,64
+2026-06-06,Matcha Latte,Drink,21,147,0,147`},
+      cafe:{profile:['Harbour Lane Cafe','Cafe','Australia/Sydney','Square'],csv:`ordered at,item,group,count,revenue,promo
+2026-06-06,Flat White,Coffee,68,340,0
+2026-06-06,Bacon Egg Roll,Breakfast,37,444,22
+2026-06-06,Avocado Toast,Brunch,19,342,0
+2026-06-06,Blueberry Muffin,Bakery,14,84,0
+2026-06-06,Iced Latte,Coffee,26,169,0`}
+    };
+    const columnAliases={date:['date','sale date','business date','ordered at'],item_name:['item_name','item','product','menu item','item name','product name'],category:['category','dept','department','group'],quantity:['quantity','qty','units sold','count','sold'],gross_sales:['gross_sales','gross sales','gross','subtotal'],discount:['discount','discounts','promo','promotion'],net_sales:['net_sales','sales','revenue','total','net sales','amount','gross']};
+    let parsedRows=[], lastParsedText='';
+    function loadSampleCsv(name=document.getElementById('sampleSelect')?.value||'thai'){const sample=sampleLibrary[name]||sampleLibrary.thai; const [restaurant,cuisine,tz,pos]=sample.profile; document.getElementById('restaurantName').value=restaurant; document.getElementById('cuisineType').value=cuisine; document.getElementById('timezone').value=tz; document.getElementById('posName').value=pos; document.getElementById('csvText').value=sample.csv; renderColumnMapping(); generateReport();}
     function money(n){return '$'+Number(n||0).toLocaleString(undefined,{maximumFractionDigits:0});}
     function parseCsv(text){
-      const lines=text.trim().split(/\r?\n/).filter(Boolean); if(lines.length<2) return [];
-      const headers=lines[0].split(',').map(h=>h.trim());
-      return lines.slice(1).map(line=>{const cells=line.split(','); const row={}; headers.forEach((h,i)=>row[h]=cells[i]?.trim()||''); return row;});
+      const rows=[]; let row=[], cell='', quoted=false;
+      for(let i=0;i<text.length;i++){const ch=text[i], next=text[i+1]; if(ch==='"'&&quoted&&next==='"'){cell+='"';i++;}else if(ch==='"'){quoted=!quoted;}else if(ch===','&&!quoted){row.push(cell.trim());cell='';}else if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\r'&&next==='\n')i++; row.push(cell.trim()); if(row.some(Boolean))rows.push(row); row=[]; cell='';}else{cell+=ch;}}
+      row.push(cell.trim()); if(row.some(Boolean))rows.push(row); if(rows.length<2)return {headers:[],rows:[]};
+      const headers=rows[0].map(h=>h.trim()); return {headers,rows:rows.slice(1).map(values=>{const out={}; headers.forEach((h,i)=>out[h]=values[i]||''); return out;})};
     }
+    function cleanHeader(header){return header.toLowerCase().replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim();}
+    function detectColumn(headers,field){const normalized=headers.map(h=>[h,cleanHeader(h)]); const aliases=columnAliases[field]; const exact=normalized.find(([,h])=>aliases.includes(h)); if(exact)return exact[0]; return normalized.find(([,h])=>aliases.some(a=>h.includes(a)))?.[0]||'';}
+    function renderColumnMapping(){const text=document.getElementById('csvText').value; const parsed=parseCsv(text); parsedRows=parsed.rows; lastParsedText=text; const panel=document.getElementById('mappingPanel'); panel.innerHTML=''; if(!parsed.headers.length){document.getElementById('csvStatus').textContent='Column mapping will appear after you paste, upload, or load CSV data.';return;} ['date','item_name','category','quantity','net_sales','gross_sales','discount'].forEach(field=>{const select=document.createElement('select'); select.id=`map_${field}`; select.innerHTML=`<option value="">Not provided</option>`+parsed.headers.map(h=>`<option value="${h.replace(/"/g,'&quot;')}">${h}</option>`).join(''); select.value=detectColumn(parsed.headers,field); const label=document.createElement('label'); label.textContent=field.replace('_',' '); label.appendChild(select); panel.appendChild(label);}); document.getElementById('csvStatus').textContent=`Loaded ${parsed.rows.length} rows. Review mappings before generating the report.`;}
+    function readCsvFile(event){const file=event.target.files[0]; if(!file)return; const reader=new FileReader(); reader.onload=()=>{document.getElementById('csvText').value=reader.result; renderColumnMapping();}; reader.readAsText(file);}
+    function currentMap(){return ['date','item_name','category','quantity','gross_sales','discount','net_sales'].reduce((m,f)=>(m[f]=document.getElementById(`map_${f}`)?.value||'',m),{});}
+    function normalizeRows(){if(document.getElementById('csvText').value!==lastParsedText)renderColumnMapping(); const map=currentMap(); return parsedRows.map(r=>({date:r[map.date]||'',item_name:r[map.item_name]||r.item_name||r.item||'Unknown',category:r[map.category]||'',quantity:Number(r[map.quantity]||0),gross_sales:Number(r[map.gross_sales]||r[map.net_sales]||0),discount:Number(r[map.discount]||0),net_sales:Number(r[map.net_sales]||r[map.gross_sales]||0)})).filter(r=>r.item_name&&r.item_name!=='Unknown');}
+    function profile(){return{restaurant:document.getElementById('restaurantName').value||'Restaurant',cuisine:document.getElementById('cuisineType').value||'food',timezone:document.getElementById('timezone').value||'local time',pos:document.getElementById('posName').value||'POS CSV',language:document.getElementById('preferredLanguage').value||'中文'};}
+    function cuisineTip(cuisine,top){const c=cuisine.toLowerCase(); if(c.includes('cafe'))return `测试 ${top.name} + coffee 加购组合`; if(c.includes('japanese'))return `把 ${top.name} 做成 lunch set，加一个小菜`; if(c.includes('viet'))return `把 ${top.name} 作为午餐外卖重点推广`; if(c.includes('thai'))return `把 ${top.name} 和饮品做午餐 bundle`; return `把 ${top.name} 做成明日 staff pick`;}
+    function historyKey(){return'ai-rboa-history-v1';}
+    function saveHistory(type,title,text){const items=JSON.parse(localStorage.getItem(historyKey())||'[]');items.unshift({type,title,text,createdAt:new Date().toLocaleString()});localStorage.setItem(historyKey(),JSON.stringify(items.slice(0,8)));renderHistory();}
+    function renderHistory(){const list=document.getElementById('historyList');if(!list)return;const items=JSON.parse(localStorage.getItem(historyKey())||'[]');list.innerHTML=items.length?items.map(item=>`<div class="historyItem"><b>${item.type} · ${item.title}</b><p>${item.createdAt} — ${item.text.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</p></div>`).join(''):'<div class="small">Generate a report, review reply, or menu caption to save local history.</div>';}
+    function clearHistory(){localStorage.removeItem(historyKey());renderHistory();}
+    function onboardingKey(){return'ai-rboa-onboarding-v1';}
+    function setupOnboarding(){const inputs=[...document.querySelectorAll('#onboardingList input')];const saved=JSON.parse(localStorage.getItem(onboardingKey())||'[]');inputs.forEach(input=>{input.checked=saved.includes(input.value);input.addEventListener('change',()=>{const done=inputs.filter(i=>i.checked).map(i=>i.value);localStorage.setItem(onboardingKey(),JSON.stringify(done));document.getElementById('onboardingStatus').textContent=`${done.length} of ${inputs.length} pilot steps complete.`;});});document.getElementById('onboardingStatus').textContent=`${inputs.filter(i=>i.checked).length} of ${inputs.length} pilot steps complete.`;}
     function generateReport(){
-      const rows=parseCsv(document.getElementById('csvText').value); if(!rows.length){alert('Paste CSV first.');return;}
-      const items={}; let total=0, qty=0, discount=0;
-      rows.forEach(r=>{const name=r.item_name||r.item||'Unknown'; const q=Number(r.quantity||0); const net=Number(r.net_sales||r.sales||0); const disc=Number(r.discount||0); qty+=q; total+=net; discount+=disc; items[name]=items[name]||{name,qty:0,sales:0,category:r.category||''}; items[name].qty+=q; items[name].sales+=net;});
-      const sorted=Object.values(items).sort((a,b)=>b.qty-a.qty); const top=sorted[0]; const low=sorted[sorted.length-1]; const drink=sorted.find(i=>/drink|tea|coffee|water/i.test(i.category+i.name));
-      const idea = drink ? `${top.name} + ${drink.name} combo` : `${top.name} lunch combo`;
-      const report=`今日经营报告\n\n总销售额：${money(total)}\n总销量：${qty} items\n折扣：${money(discount)}${discount/Math.max(total,1)>.08?' ⚠️ 折扣偏高':''}\n\nTop sellers:\n${sorted.slice(0,5).map((i,idx)=>`${idx+1}. ${i.name} — ${i.qty} orders / ${money(i.sales)}`).join('\n')}\n\n低表现项目：${low.name} — ${low.qty} orders\n\n明日建议：\n• 推 ${idea}\n• 把 ${top.name} 放在门口 signage / Instagram story\n• 检查 ${top.name} 原料备货，避免明天缺货\n• 如果 ${low.name} 连续低销量，考虑换描述或做 bundle`;
-      const msg=`老板今天简报：销售 ${money(total)}，卖出 ${qty} 件。Top item 是 ${top.name}（${top.qty} orders）。明天建议推 ${idea}。注意备货 ${top.name}，低销量项目是 ${low.name}。`;
+      const rows=normalizeRows(); if(!rows.length){alert('Paste CSV and map item, quantity, and sales columns first.');return;}
+      const items={}, categories={}; let total=0, qty=0, discount=0;
+      rows.forEach(r=>{qty+=r.quantity; total+=r.net_sales; discount+=r.discount; items[r.item_name]=items[r.item_name]||{name:r.item_name,qty:0,sales:0,category:r.category}; items[r.item_name].qty+=r.quantity; items[r.item_name].sales+=r.net_sales; const cat=r.category||'Uncategorised'; categories[cat]=(categories[cat]||0)+r.net_sales;});
+      const byQty=Object.values(items).sort((a,b)=>b.qty-a.qty); const byRevenue=Object.values(items).sort((a,b)=>b.sales-a.sales); const weak=Object.values(items).filter(i=>i.qty>0).sort((a,b)=>a.qty-b.qty).slice(0,3); const top=byQty[0]; const low=weak[0]||top; const drink=byQty.find(i=>/drink|tea|coffee|water/i.test(i.category+i.name));
+      const idea = drink ? `${top.name} + ${drink.name} combo` : `${top.name} lunch combo`; const categoryMix=Object.entries(categories).sort((a,b)=>b[1]-a[1]).map(([name,sales])=>`${name}: ${money(sales)} (${Math.round(sales/Math.max(total,1)*100)}%)`).join('\n'); const p=profile();
+      const report=`${p.restaurant} 今日经营报告\nCuisine: ${p.cuisine}\nTimezone: ${p.timezone}\nSource: ${p.pos}\nOwner language: ${p.language}\n\n总销售额：${money(total)}\n总销量：${qty} items\n折扣：${money(discount)}${discount/Math.max(total,1)>.08?' ⚠️ 折扣偏高':''}\n\n按销量 Top sellers:\n${byQty.slice(0,5).map((i,idx)=>`${idx+1}. ${i.name} - ${i.qty} orders / ${money(i.sales)}`).join('\n')}\n\n按销售额 Top sellers:\n${byRevenue.slice(0,5).map((i,idx)=>`${idx+1}. ${i.name} - ${money(i.sales)} / ${i.qty} orders`).join('\n')}\n\nCategory mix:\n${categoryMix}\n\n低表现项目：\n${weak.map(i=>`- ${i.name}: ${i.qty} orders / ${money(i.sales)}`).join('\n')}\n\n明日建议：\n- 推 ${idea}\n- ${cuisineTip(p.cuisine,top)}\n- 把 ${top.name} 放在门口 signage / Instagram story\n- 检查 ${top.name} 原料备货，避免明天缺货\n- 如果 ${low.name} 连续低销量，考虑换描述或做 bundle`;
+      const msg=`${p.restaurant} 老板今天简报：销售 ${money(total)}，卖出 ${qty} 件。Top item 是 ${top.name}（${top.qty} orders）。明天建议推 ${idea}。注意备货 ${top.name}，低销量项目是 ${low.name}。`;
       document.getElementById('reportOut').textContent=report; document.getElementById('messageOut').textContent=msg;
       document.getElementById('salesMetric').innerHTML=`${money(total)} <span class="good">live</span>`; document.getElementById('topMetric').textContent=top.name; document.getElementById('watchMetric').textContent=low.name; document.getElementById('ideaMetric').textContent=idea;
+      document.getElementById('csvStatus').textContent='Report generated. Summary is ready to copy or export.'; saveHistory('Daily report',p.restaurant,msg);
     }
-    function generateReviewReply(){
+    function reportText(){return [document.getElementById('reportOut').textContent,document.getElementById('messageOut').textContent].join('\n\nOwner message:\n');}
+    function hasReport(text){return text.trim()&&!text.includes('Load sample data')&&!text.includes('Short owner message');}
+    function exportReport(){const text=reportText(); if(!hasReport(text)){alert('Generate a report first.');return;} const url=URL.createObjectURL(new Blob([text],{type:'text/plain'})); const a=document.createElement('a'); a.href=url; a.download='daily-restaurant-report.txt'; a.click(); URL.revokeObjectURL(url);}
+    function printPdfReport(){const text=reportText(); if(!hasReport(text)){alert('Generate a report first.');return;} const title=(document.getElementById('restaurantName').value||'Restaurant')+' daily report'; const win=window.open('','_blank','width=860,height=960'); if(!win){alert('Allow popups to save the report as PDF.');return;} win.document.write(`<!doctype html><html><head><title>${title}</title><style>body{font-family:Arial,sans-serif;margin:32px;color:#111827}h1{font-size:24px;margin:0 0 18px}.meta{color:#64748b;margin-bottom:22px}pre{white-space:pre-wrap;line-height:1.5;font-size:14px;border-top:1px solid #cbd5e1;padding-top:18px}@media print{button{display:none}body{margin:20mm}}</style></head><body><button onclick="window.print()" style="float:right;padding:10px 14px">Save as PDF</button><h1>${title}</h1><div class="meta">Generated by AI Restaurant Back Office Assistant</div><pre>${text.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</pre><script>setTimeout(()=>window.print(),250)<\/script></body></html>`); win.document.close();}
+    async function copyOwnerSummary(){const text=document.getElementById('messageOut').textContent; if(!text.trim()||text.includes('Short owner message')){alert('Generate a report first.');return;} await navigator.clipboard.writeText(text); document.getElementById('csvStatus').textContent='Owner summary copied to clipboard.';}
+    function generateReviewReply(save=true){
       const rating=Number(document.getElementById('rating').value); const lang=document.getElementById('replyLang').value; const text=document.getElementById('reviewText').value;
       const positive=rating>=4; const hasWait=/wait|slow|late|busy/i.test(text); const dish=(text.match(/pad thai|pho|ramen|sushi|coffee|tea|curry/i)||['meal'])[0];
       const replies={
@@ -112,9 +189,9 @@
         'ไทย': positive?`ขอบคุณมากครับ/ค่ะ ดีใจที่คุณชอบ ${dish} และบริการของเรา หวังว่าจะได้ต้อนรับอีกเร็ว ๆ นี้ 😊`:`ขอบคุณสำหรับความคิดเห็น และขออภัยที่ประสบการณ์ครั้งนี้ยังไม่ดีพอ เราจะนำไปปรับปรุงกับทีม${hasWait?' โดยเฉพาะเรื่องเวลารออาหาร':''} ครับ/ค่ะ`,
         '日本語': positive?`ご来店ありがとうございます！${dish} とサービスを気に入っていただけて嬉しいです。またのお越しをお待ちしています 😊`:`貴重なご意見ありがとうございます。今回ご期待に沿えず申し訳ありません。スタッフと共有し${hasWait?'、待ち時間の改善も含めて':''}改善いたします。`
       };
-      document.getElementById('replyOut').textContent=replies[lang];
+      document.getElementById('replyOut').textContent=replies[lang]; if(save)saveHistory('Review reply',`${rating} stars · ${lang}`,replies[lang]);
     }
-    function translateMenu(){
+    function translateMenu(save=true){
       const name=document.getElementById('menuName').value||'Menu item'; const desc=document.getElementById('menuDesc').value||'';
       const dict={
         'Chicken Pad Thai':['泰式鸡肉炒河粉','ผัดไทยไก่','チキン・パッタイ'],
@@ -124,9 +201,9 @@
       };
       const t=dict[name]||[`中文：${name}`,`ไทย: ${name}`,`日本語: ${name}`];
       const caption=`Fresh ${name} today 🍜 Perfect for lunch or dinner. Drop by or order takeaway! #sydneyfood #asianrestaurant #foodie`;
-      document.getElementById('menuOut').textContent=`English: ${name}\n中文: ${t[0]}\nไทย: ${t[1]}\n日本語: ${t[2]}\n\nShort description:\n${desc}\n\nInstagram/TikTok caption:\n${caption}`;
+      const output=`English: ${name}\n中文: ${t[0]}\nไทย: ${t[1]}\n日本語: ${t[2]}\n\nShort description:\n${desc}\n\nInstagram/TikTok caption:\n${caption}`; document.getElementById('menuOut').textContent=output; if(save)saveHistory('Menu/social',name,caption);
     }
-    generateReviewReply(); translateMenu();
+    generateReviewReply(false); translateMenu(false); setupOnboarding(); renderHistory();
   </script>
 </body>
 </html>

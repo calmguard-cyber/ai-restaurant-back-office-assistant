@@ -2,14 +2,15 @@
 
 ## P0 — Needed before first real pilot
 
-- [ ] Add column mapping UI for POS CSV variations
-- [ ] Support Excel upload or clear CSV export instructions
-- [ ] Add copy button for owner summary
-- [ ] Add report export as text/PDF
-- [ ] Add restaurant profile fields: name, cuisine, language, timezone
-- [ ] Add sample CSVs for Thai, Viet, Japanese, cafe
-- [ ] Improve daily report recommendations
-- [ ] Add English-only owner sales page
+- [x] Add column mapping UI for POS CSV variations
+- [x] Support Excel upload or clear CSV export instructions
+- [x] Add copy button for owner summary
+- [x] Add report export as text
+- [x] Add report export as PDF
+- [x] Add restaurant profile fields: name, cuisine, language, timezone
+- [x] Add sample CSVs for Thai, Viet, Japanese, cafe
+- [x] Improve daily report recommendations
+- [x] Add English-only owner sales page
 
 ## P1 — Needed for paid pilot
 
@@ -18,8 +19,9 @@
 - [ ] Save reports per restaurant
 - [ ] Telegram bot daily delivery
 - [ ] Basic authentication
-- [ ] Simple pricing / contact form
-- [ ] Onboarding checklist
+- [x] Simple pricing / contact form
+- [x] Onboarding checklist
+- [x] Browser-local generated content history
 
 ## P2 — Nice after validation
 
