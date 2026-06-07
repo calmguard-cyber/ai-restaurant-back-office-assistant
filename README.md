@@ -50,3 +50,10 @@ https://calmguard-cyber.github.io/ai-restaurant-back-office-assistant/
 ## Fastest validation
 
 找 3 家熟悉的亚洲餐馆免费试用 7 天，换 testimonial 和真实 CSV 样本。
+
+## Planning docs
+
+- [Product development plan](docs/product-development-plan.md)
+- [Technical plan](docs/technical-plan.md)
+- [MVP backlog](docs/mvp-backlog.md)
+
